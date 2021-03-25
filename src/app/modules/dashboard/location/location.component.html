@@ -1,0 +1,103 @@
+
+
+
+
+
+
+<div class="container">
+    <h2>Reactive forms with FormBuilder Exam</h2>
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()" novalidate>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="name" class="form-control"
+          formControlName="name">
+       <!-- <em *ngIf="name.errors?.required && name.touched" class="alert">
+          name is required
+        </em>  -->
+       
+      </div>
+      <div class="form-group">
+    <label for="address">Address</label>
+    <input type="text" name="address" class="form-control"
+    formControlName="address">
+    <!-- <em *ngIf="address.errors?.required && address.touched" class="alert">
+      address is required
+    </em> -->
+   
+  </div>
+  <div class="form-group">
+    <label for="lat">Lat</label>
+    <input type="number" inputmode="numeric"  name="lat" class="form-control"
+    formControlName="lat">
+    <!-- <em *ngIf="lat.errors?.required && lat.touched" class="alert">
+      lat is required
+    </em> -->
+   
+  </div>
+  <div class="form-group">
+    <label for="lng">Lng</label>
+    <input type="number"  inputmode="numeric"  name="lng" class="form-control"
+    formControlName="lng">
+    <!-- <em *ngIf="lng.errors?.required && lng.touched" class="alert">
+      lng is required
+    </em> -->
+   
+  </div>
+  <div class="form-group">
+    <label for="status">Status</label>
+    <input type="text" name="status" class="form-control"
+    formControlName="status">
+    <!-- <em *ngIf="status.errors?.required && status.touched" class="alert">
+      status is required
+    </em> -->
+   
+  </div>
+  <div class="form-group">
+    <label for="createdby">Created By</label>
+    <input type="number" inputmode="numeric"  name="createdby" class="form-control"
+    formControlName="createdby">
+    <!-- <em *ngIf="createdby.errors?.required && createdby.touched" class="alert">
+      createdby is required
+    </em> -->
+   
+  </div>
+
+
+  <div class="form-group">
+    <label for="createdby">Radius</label>
+    <input type="number" inputmode="numeric"  name="radius" class="form-control"
+    formControlName="radius">
+    <!-- <em *ngIf="radius.errors?.required && radius.touched" class="alert">
+        radius is required
+    </em> -->
+   
+  </div>
+
+   
+      
+      <button type="submit" class="btn btn-success btn-block"
+        [disabled]="userForm.invalid">Submit</button>
+    </form>
+    <pre>{{ userForm.value | json }}</pre>
+    <pre>{{ userForm.status }}</pre>
+  </div>
+
+
+
+<table datatable class="row-border hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>First name</th>
+        <th>Last name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of datas">
+        <td>{{c.name}}</td>
+        <td>{{c.lat}}</td>
+        <td>{{c.lng}}</td>
+      </tr>
+      
+    </tbody>
+  </table>

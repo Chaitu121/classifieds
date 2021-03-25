@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-lg-4"></div>
+<div class="col-sm-12 col-lg-4 col-md-12 oooo">
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+
+  <div class="form-group" style="background-color: blue;text-align: center;padding:5px;width:100%;color:white;">
+  Login</div>
+   
+      <div class="col-12 form-group">
+        <label>Username</label>
+        <input type="text" class="form-control" name="username" formControlName="username"  autofocus />
+        <small class="form-text text-muted" 
+        *ngIf="loginForm.controls.username.touched && loginForm.controls.username.errors?.required">
+          Please enter username.!
+      </small>
+
+     
+   
+    </div>
+    
+      <div class="col-12 form-group">
+        <label>Password</label>
+        <div class="password">
+          <input type="{{showPassword ? '' : 'password'}}" formControlName="password"  class="form-control" name="password"/>
+          <i class="zmdi zmdi-eye" (click)="showPassword = true" *ngIf="!showPassword"></i>
+          <i class="zmdi zmdi-eye-off" (click)="showPassword = false" *ngIf="showPassword"></i>
+        </div>
+     
+    </div>
+   
+      
+        <button type="submit" class="  button button-primary btn-lg button-block">Login</button>
+      
+  
+  </form></div></div>
