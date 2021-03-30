@@ -19,7 +19,9 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 const routes: Routes = [
   {path:'',component:DashboardComponent,children:[
-  {path:'',component:BodyComponent},{path:'addUser',component:AddUserComponent},
+  {path:'',component:MerchantsComponent},
+
+  {path:'addUser',component:AddUserComponent},
   {path:'merchants',component:MerchantsComponent},
   {path:'classifieds',component:ClassifieldsComponent},
   {path:'location',component:LocationComponent},

@@ -13,10 +13,12 @@ import{HttpClientModule,HTTP_INTERCEPTORS} from'@angular/common/http';
 import{FormsModule,ReactiveFormsModule}from '@angular/forms'
 import{DashboardModule}from'./modules/dashboard/dashboard.module';
 import { RouterModule, Routes } from '@angular/router';
+import{AuthguardGuard} from'./Guards/authguard.guard';
 const routes: Routes = [
   {path:'',redirectTo:'/login',pathMatch:'full'},
   {path:'login',component:LoginComponent},
-  {path:'dashboard',loadChildren:'./modules/dashboard/dashboard.module#DashboardModule'},
+  //{path:'dashboard',loadChildren:'./modules/dashboard/dashboard.module#DashboardModule'},
+  {path:'dashboard',loadChildren:'./modules/dashboard/dashboard.module#DashboardModule', canActivate: [AuthguardGuard]},
   {path:'not',component:NotfoundComponent}
   ];
 @NgModule({
@@ -31,7 +33,7 @@ const routes: Routes = [
   ],exports:[RouterModule],
   providers: [RootserviceService,
     {provide:HTTP_INTERCEPTORS,useClass:BasicAuthInterceptor,multi:true},
-    {provide:HTTP_INTERCEPTORS,useClass:ErrorInterceptor,multi:true},
+    {provide:HTTP_INTERCEPTORS,useClass:ErrorInterceptor,multi:true},AuthguardGuard
 
   ],
   bootstrap: [AppComponent]

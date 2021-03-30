@@ -9,6 +9,8 @@ import {RootserviceService}from './../../../rootservice.service'
   styleUrls: ['./location.component.css']
 })
 export class LocationComponent implements OnInit {
+  dtOptions: DataTables.Settings = {};
+
   userForm: FormGroup;
 datas:any=[];
   constructor(private fb: FormBuilder,private Router:Router,private authervice:RootserviceService) {
@@ -37,6 +39,10 @@ initial(){
   
 
     ngOnInit() {
+      this.dtOptions = {
+        pagingType: 'full_numbers',
+        pageLength: 2
+      };
     }
     get name() {
       return this.userForm.get('name');

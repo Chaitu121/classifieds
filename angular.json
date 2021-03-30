@@ -48,7 +48,7 @@
               "node_modules/admin-lte/plugins/jquery-mapael/maps/usa_states.js",
               "node_modules/admin-lte/plugins/chart.js/Chart.js",
               "node_modules/admin-lte/dist/js/pages/dashboard2.js",
-              "node_modules/jquery/dist/jquery.js",
+             
               "node_modules/datatables.net/js/jquery.dataTables.js"
 
 
@@ -56,6 +56,20 @@
             ]
           },
           "configurations": {
+            "developer": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.developer.ts"
+                }
+              ]},
+              "qa": {
+                "fileReplacements": [
+                  {
+                    "replace": "src/environments/environment.ts",
+                    "with": "src/environments/environment.qa.ts"
+                  }
+                ]},
             "production": {
               "fileReplacements": [
                 {
@@ -91,6 +105,12 @@
             "browserTarget": "classifieds:build"
           },
           "configurations": {
+            "developer": {
+              "browserTarget": "classifieds:build:developer"
+            },
+            "qa": {
+              "browserTarget": "classifieds:build:qa"
+            },
             "production": {
               "browserTarget": "classifieds:build:production"
             }
