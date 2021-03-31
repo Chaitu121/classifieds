@@ -16,6 +16,7 @@ constructor(private Router:Router,private authervice:RootserviceService){
   
   let ball=6;
   let hjkl=90;
+  let pb=909;
   this.loginForm = new FormGroup({
     username: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required])
