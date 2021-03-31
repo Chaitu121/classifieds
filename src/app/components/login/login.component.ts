@@ -10,6 +10,7 @@ import {RootserviceService}from './../../rootservice.service'
 })
 export class LoginComponent implements OnInit{
   loginForm: FormGroup;
+  let ball=6;
 constructor(private Router:Router,private authervice:RootserviceService){
   this.loginForm = new FormGroup({
     username: new FormControl('', [Validators.required]),
