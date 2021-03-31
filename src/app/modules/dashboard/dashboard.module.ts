@@ -15,7 +15,7 @@ import { ClassifieldsComponent } from './classifields/classifields.component';
 import { LocationComponent } from './location/location.component';
 import { CategoryComponent } from './category/category.component';
 import { HomeComponent } from './home/home.component';
-
+import { NgxSpinnerModule } from "ngx-spinner";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 const routes: Routes = [
   {path:'',component:DashboardComponent,children:[
