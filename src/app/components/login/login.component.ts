@@ -11,10 +11,10 @@ import {RootserviceService}from './../../rootservice.service'
 export class LoginComponent implements OnInit{
   loginForm: FormGroup;
 
-    bps=9;
-
-  let ball=6;
+   
 constructor(private Router:Router,private authervice:RootserviceService){
+  
+  let ball=6;
   this.loginForm = new FormGroup({
     username: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required])
