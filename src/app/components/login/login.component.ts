@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit{
 constructor(private Router:Router,private authervice:RootserviceService){
   
   let ball=6;
+  let hjkl=90;
   this.loginForm = new FormGroup({
     username: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required])
